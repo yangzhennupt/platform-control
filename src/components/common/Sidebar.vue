@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar">
-        <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
+        <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router  background-color="#324157" text-color="#bfcbd9" active-text-color="#20a0ff">
             <template v-for="item in items">
                 <template v-if="item.subs">
                     <el-submenu :index="item.index">
@@ -32,27 +32,31 @@
                     {
                         icon: 'el-icon-menu',
                         index: '2',
-                        title: '表格',
+                        title: '班线管理',
                         subs: [
                             {
                                 index: 'basetable',
-                                title: '基础表格'
+                                title: '线路属性管理'
                             },
                             {
                                 index: 'vuetable',
-                                title: 'Vue表格组件'
+                                title: '新开路线发布'
+                            },
+                            {
+                                index: 'upload',
+                                title: '线路承运人管理'
                             }
                         ]
                     },
                     {
                         icon: 'el-icon-date',
                         index: '3',
-                        title: '表单',
+                        title: '企业管理',
                         subs: [
                             {
                                 index: 'baseform',
-                                title: '基本表单'
-                            },
+                                title: '业务申请审核'
+                            }/*,
                             {
                                 index: 'vueeditor',
                                 title: '编辑器'
@@ -64,18 +68,23 @@
                             {
                                 index: 'upload',
                                 title: '文件上传'
-                            }
+                            }*/
                         ]
                     },
                     {
                         icon: 'el-icon-star-on',
                         index: 'basecharts',
-                        title: '图表'
-                    },
-                    {
-                        icon: 'el-icon-upload2',
-                        index: 'drag',
-                        title: '拖拽'
+                        title: '承运人管理',
+                        subs:[
+                            {
+                                index:'vueeditor',
+                                title:'资格管理' 
+                            },
+                            {
+                                index:'markdown',
+                                title:'结算' 
+                            }
+                        ]
                     }
                 ]
             }

@@ -24,33 +24,33 @@
         data() {
             return {
                 items: [
-                    {
-                        icon: 'el-icon-setting',
-                        index: 'readme',
-                        title: '自述'
-                    },
+                    // {
+                    //     icon: 'el-icon-setting',
+                    //     index: 'readme',
+                    //     title: '自述'
+                    // },
                     {
                         icon: 'el-icon-menu',
-                        index: '2',
+                        index: '1',
                         title: '班线管理',
                         subs: [
                             {
-                                index: 'basetable',
-                                title: '线路属性管理'
+                                index: 'lineproperty',
+                                title: '班线属性管理'
                             },
                             {
-                                index: 'vuetable',
-                                title: '新开路线发布'
+                                index: 'newlinepublish',
+                                title: '新开班线发布'
                             },
                             {
-                                index: 'upload',
-                                title: '线路承运人管理'
+                                index: 'lineresponsibility',
+                                title: '班线承运人管理'
                             }
                         ]
                     },
                     {
                         icon: 'el-icon-date',
-                        index: '3',
+                        index: '2',
                         title: '企业管理',
                         subs: [
                             {
@@ -73,7 +73,7 @@
                     },
                     {
                         icon: 'el-icon-star-on',
-                        index: 'basecharts',
+                        index: '3',
                         title: '承运人管理',
                         subs:[
                             {

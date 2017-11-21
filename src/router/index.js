@@ -18,6 +18,22 @@ export default new Router({
                     component: resolve => require(['../components/page/Readme.vue'], resolve)
                 },
                 {
+                    path: '/lineproperty',
+                    component: resolve => require(['../components/page/LineProperty.vue'], resolve)   
+                },
+                {
+                    path: '/lineresponsibility',
+                    component: resolve => require(['../components/page/LineResponsibility.vue'], resolve)   
+                },
+                {
+                    path: '/newlinepublish',
+                    component: resolve => require(['../components/page/NewLinePublish.vue'], resolve)   
+                },
+                {
+                    path: '/basecharts',
+                    component: resolve => require(['../components/page/BaseCharts.vue'], resolve)   // vue-schart组件
+                },
+                {
                     path: '/basetable',
                     component: resolve => require(['../components/page/BaseTable.vue'], resolve)
                 },

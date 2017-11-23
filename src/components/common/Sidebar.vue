@@ -24,11 +24,6 @@
         data() {
             return {
                 items: [
-                    // {
-                    //     icon: 'el-icon-setting',
-                    //     index: 'readme',
-                    //     title: '自述'
-                    // },
                     {
                         icon: 'el-icon-menu',
                         index: '1',
@@ -54,21 +49,9 @@
                         title: '企业管理',
                         subs: [
                             {
-                                index: 'baseform',
+                                index: 'businessaudit',
                                 title: '业务申请审核'
-                            }/*,
-                            {
-                                index: 'vueeditor',
-                                title: '编辑器'
-                            },
-                            {
-                                index: 'markdown',
-                                title: 'markdown'
-                            },
-                            {
-                                index: 'upload',
-                                title: '文件上传'
-                            }*/
+                            }
                         ]
                     },
                     {
@@ -77,11 +60,11 @@
                         title: '承运人管理',
                         subs:[
                             {
-                                index:'vueeditor',
+                                index:'qualificationcontrol',
                                 title:'资格管理' 
                             },
                             {
-                                index:'markdown',
+                                index:'balance',
                                 title:'结算' 
                             }
                         ]

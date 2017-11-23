@@ -1,5 +1,7 @@
 <template>
+    
     <div class="table">
+
         <div class="crumbs">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item><i class="el-icon-menu"></i> 表格</el-breadcrumb-item>
@@ -24,14 +26,14 @@
             </el-table-column>
             <el-table-column prop="name" label="班线名称" width="120">
             </el-table-column>
-            <el-table-column prop="isShare" label="是否共享" >
+            <el-table-column prop="isShare" label="是否共享" :formatter="formatter">
             </el-table-column>
              <el-table-column prop="loadPerson" label="最大载客数">
             </el-table-column>
             <el-table-column label="操作" width="180">
                 <template scope="scope">
                     <el-button size="small"
-                            @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                            @click="handleEdit(scope.$index, scope.row,scope.store,scope.column)">编辑</el-button>
                     <el-button size="small" type="danger"
                             @click="handleDelete(scope.$index, scope.row)">删除</el-button>
                 </template>
@@ -44,6 +46,23 @@
                     :total="1000">
             </el-pagination>
         </div>
+        <el-dialog title="班线属性" :visible.sync="dialogFormVisible">
+            <el-form :model="form" label-width="120px">
+                <el-form-item label="是否共享" >           
+                    <el-radio-group v-model="form.isShare">
+                        <el-radio :label="true">是</el-radio>
+                        <el-radio :label="false">否</el-radio>
+                    </el-radio-group>                  
+                </el-form-item>
+                <el-form-item label="最大载客数">
+                    <el-input v-model="form.loadPerson" auto-complete="off"></el-input>
+                </el-form-item>               
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+            </div>
+    </el-dialog>
     </div>
 </template>
 
@@ -58,7 +77,14 @@
                 select_cate: '',
                 select_word: '',
                 del_list: [],
-                is_search: false
+                is_search: false,
+                dialogFormVisible:false,
+                form:{
+                    id:null,
+                    name:null,
+                    isShare:null,
+                    loadPerson:0
+                }
             }
         },
         created(){
@@ -78,6 +104,13 @@
                 this.cur_page = val;
                 this.getData();
             },
+            formatter(row, column){
+                if(row.isShare){
+                    return "是"
+                }else{
+                    return "否"
+                }
+            },
             getData(){
               
             },
@@ -87,8 +120,17 @@
             filterTag(value, row) {
                 return row.tag === value;
             },
-            handleEdit(index, row) {
-                this.$message('编辑第'+(index+1)+'行');
+            handleEdit(index, row,store,column) {
+                console.log(row);
+                this.dialogFormVisible=true;
+                this.dialogFormLoad(row);
+                //this.$message('编辑第'+index+'行');
+            },
+            dialogFormLoad(data){
+                    this.form.id=data.id,
+                    this.form.name=data.name,
+                    this.form.isShare=data.isShare,
+                    this.form.loadPerson=data.loadPerson
             },
             handleDelete(index, row) {
                 this.$message.error('删除第'+(index+1)+'行');

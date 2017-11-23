@@ -22,11 +22,11 @@
         </div>
         <el-table :data="tableData" border style="width: 100%" ref="multipleTable" @selection-change="handleSelectionChange">
             <el-table-column type="selection" width="55"></el-table-column>
-            <el-table-column prop="id" label="班线ID" sortable width="150">
+            <el-table-column prop="id" label="班线ID" sortable width="100">
             </el-table-column>
-            <el-table-column prop="name" label="班线名称" width="120">
+            <el-table-column prop="name" label="班线名称" >
             </el-table-column>
-            <el-table-column prop="isShare" label="是否共享" :formatter="formatter">
+            <el-table-column prop="isShare" label="是否共享" :formatter="formatter" width="100">
             </el-table-column>
              <el-table-column prop="loadPerson" label="最大载客数">
             </el-table-column>

@@ -64,8 +64,10 @@
         created(){
             // this.getData();
              let self =this;
+             
              this.$axios.get('/api/lineproperty').then((res)=>{                
-                 self.tableData = res.data;
+                  //console.log(res);
+                 self.tableData = res.data.data;
              })
         },
         computed: {
@@ -81,9 +83,6 @@
             },
             search(){
                 this.is_search = true;
-            },
-            formatter(row, column) {
-                return row.address;
             },
             filterTag(value, row) {
                 return row.tag === value;

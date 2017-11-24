@@ -45,12 +45,12 @@
 |------|-----|------|
 | id | 承运人id | string |
 | name | 承运人名称 | string |
-|         | 出生日期 | string |
-|         | 性别 | string |
-|         | 联系方式 | string |
-|         | 所属汽旅公司 | string |
-|         | 身份证号 | string |
-|         | 驾驶证件信息 | string |
+| birthday| 出生日期 | string |
+|  sex       | 性别 | string |
+|  tel       | 联系方式 | string |
+|  company       | 所属汽旅公司 | string |
+|  idCard       | 身份证号 | string |
+|  driverCard       | 驾驶证件信息 | string |
 | carType | 承运车型 | string |
 | carColor | 承运车颜色 | string |
 | carPlate | 承运车牌 | string |

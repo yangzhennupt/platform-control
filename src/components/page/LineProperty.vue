@@ -26,11 +26,17 @@
             </el-table-column>
             <el-table-column prop="name" label="班线名称" >
             </el-table-column>
-            <el-table-column prop="isShare" label="是否共享" :formatter="formatter" width="100">
+            <el-table-column prop="initiator" label="企业名称" >
             </el-table-column>
-             <el-table-column prop="loadPerson" label="最大载客数">
+            <el-table-column prop="isShare" label="是否共享" :formatter="shareFormatter" width="100">
             </el-table-column>
-            <el-table-column label="操作" width="180">
+            <el-table-column prop="loadPerson" label="最大载客数">
+            </el-table-column>
+            <el-table-column prop="startTime" label="发车时间">
+            </el-table-column>
+            <el-table-column prop="carries" label="承运人" :formatter="carryFormatter">
+            </el-table-column>
+            <el-table-column label="操作" width="180" fixed="right">
                 <template slot-scope="scope">
                     <el-button size="small"
                             @click="handleEdit(scope.$index, scope.row,scope.store,scope.column)">编辑</el-button>
@@ -80,10 +86,7 @@
                 is_search: false,
                 dialogFormVisible:false,
                 form:{
-                    id:null,
-                    name:null,
-                    isShare:null,
-                    loadPerson:0
+                   
                 }
             }
         },
@@ -104,11 +107,18 @@
                 this.cur_page = val;
                 this.getData();
             },
-            formatter(row, column){
+            shareFormatter(row, column){
                 if(row.isShare){
                     return "是"
                 }else{
                     return "否"
+                }
+            },
+            carryFormatter(row,column){
+                if(row.carries&&row.carries.length>0){
+                    return row.carries.join('，');
+                }else{
+                    return '';
                 }
             },
             getData(){
@@ -127,10 +137,11 @@
                 //this.$message('编辑第'+index+'行');
             },
             dialogFormLoad(data){
-                    this.form.id=data.id,
-                    this.form.name=data.name,
-                    this.form.isShare=data.isShare,
-                    this.form.loadPerson=data.loadPerson
+                    // this.form.id=data.id,
+                    // this.form.name=data.name,
+                    // this.form.isShare=data.isShare,
+                    // this.form.loadPerson=data.loadPerson
+                    this.form = data;
             },
             handleDelete(index, row) {
                 this.$message.error('删除第'+(index+1)+'行');

@@ -39,9 +39,9 @@
             <el-table-column label="操作" width="180" fixed="right">
                 <template slot-scope="scope">
                     <el-button size="small"
-                            @click="handleEdit(scope.$index, scope.row,scope.store,scope.column)">编辑</el-button>
+                            @click="handleEdit(scope.$index, scope.row,scope.store,scope.column)">通过</el-button>
                     <el-button size="small" type="danger"
-                            @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                            @click="handleDelete(scope.$index, scope.row)">拒绝</el-button>
                 </template>
             </el-table-column>
         </el-table>

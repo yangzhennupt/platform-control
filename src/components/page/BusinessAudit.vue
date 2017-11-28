@@ -2,15 +2,17 @@
     <div class="table">
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-menu"></i> 表格</el-breadcrumb-item>
-                <el-breadcrumb-item>基础表格</el-breadcrumb-item>
+                <el-breadcrumb-item><i class="el-icon-menu"></i>企业管理</el-breadcrumb-item>
+                <el-breadcrumb-item>业务申请审核</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="handle-box">
-            <el-button type="primary" icon="delete" class="handle-del mr10" @click="delAll">批量删除</el-button>
-            <el-select v-model="select_cate" placeholder="筛选省份" class="handle-select mr10">
-                <el-option key="1" label="广东省" value="广东省"></el-option>
-                <el-option key="2" label="湖南省" value="湖南省"></el-option>
+            <el-button type="primary" icon="delete" class="handle-del mr10" @click="delAll">批量通过</el-button>
+            <el-select v-model="select_cate" placeholder="筛选状态" class="handle-select mr10">
+                <el-option key="2" label="全部" value="全部"></el-option>
+                <el-option key="2" label="待审核" value="待审核"></el-option>
+                <el-option key="1" label="已通过" value="已通过"></el-option>
+                <el-option key="2" label="未通过" value="未通过"></el-option>
             </el-select>
             <el-input v-model="select_word" placeholder="筛选关键词" class="handle-input mr10"></el-input>
             <el-button type="primary" icon="search" @click="search">搜索</el-button>

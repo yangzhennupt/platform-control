@@ -10,7 +10,7 @@ export default new Router({
             redirect: '/login'
         },
         {
-            path: '/readme',
+            path: '/index',
             component: resolve => require(['../components/common/Home.vue'], resolve),
             children:[
                 {
@@ -26,8 +26,8 @@ export default new Router({
                     component: resolve => require(['../components/page/LineResponsibility.vue'], resolve)   
                 },
                 {
-                    path: '/newlinepublish',
-                    component: resolve => require(['../components/page/NewLinePublish.vue'], resolve)   
+                    path: '/customBusLine',
+                    component: resolve => require(['../components/page/CustomBusLine.vue'], resolve)   
                 },
                 {
                     path: '/balance',
@@ -45,7 +45,7 @@ export default new Router({
         },
         {
             path: '/login',
-            component: resolve => require(['../components/page/Login.vue'], resolve)
-        },
+            component: resolve => require(['../components/page/login/Login.vue'], resolve)
+        }
     ]
 })

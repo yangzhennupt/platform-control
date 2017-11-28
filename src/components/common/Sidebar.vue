@@ -34,7 +34,7 @@
                                 title: '班线属性管理'
                             },
                             {
-                                index: 'newlinepublish',
+                                index: 'customBusLine',
                                 title: '新开班线发布'
                             },
                             {

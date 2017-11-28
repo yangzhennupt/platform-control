@@ -111,3 +111,12 @@ a{text-decoration: none}
 .editor-btn{
     margin-top: 20px;
 }
+
+
+/* element-ui相关配置 */
+#loginTabs .el-tabs__nav {
+    margin-left: 142px!important;
+}
+#loginTabs .el-tabs__content {
+    
+}

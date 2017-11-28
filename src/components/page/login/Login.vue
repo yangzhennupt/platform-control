@@ -89,10 +89,10 @@
                             let auth_token = data.auth_token;
                             let username = data.name;
                             // 设置token和用户名
-                           // this.$store.dispatch('UserLogin', auth_token);
-                            //this.$store.dispatch('UserName', this.loginForm.name); 
-                            //self.setToken(auth_token);
-                           // self.setUsername(name);
+                            // self.$store.dispatch('UserLogin', auth_token);
+                            // self.$store.dispatch('UserName', this.loginForm.name); 
+                            this.setToken(auth_token);
+                            this.setUsername(name);
 
                             this.$refs[formName].resetFields();
                             //如果用户手动输入"/"那么会跳转到这里来，即this.$route.query.redirect有参数

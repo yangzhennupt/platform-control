@@ -19,5 +19,6 @@ Vue.prototype.$axios = axios;
 Vue.prototype.$lodash = lodash;
 new Vue({
     router,
+    store,
     render: h => h(App)
 }).$mount('#app');
